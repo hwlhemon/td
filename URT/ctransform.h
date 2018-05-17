@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <cassert>
 
+// 4 bytes
 // 	unsigned char buffer[4] = { 0 };
 // 	memcpy(buffer, pchAnswer, sizeof(int));
 // 	uint32_t retVal = buffer[3];
@@ -13,7 +14,7 @@
 // 	retVal += buffer[0] << 24;
 
 
-
+// 4 bytes passed, not verify 8 bytes
 template <typename T>
 T transformA2I(const unsigned char* buf, const int len)
 {
@@ -45,6 +46,10 @@ unsigned char*  transformReverse(unsigned char * buf, int len)
 	return buf;
 }
 
+
+/**
+ * unsigned char * to float or double 
+ */
 template <typename T>
 T transformA2F(const unsigned char * buf, int len)
 {
